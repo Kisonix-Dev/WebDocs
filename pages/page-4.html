@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>WebDocs</title>
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/modal.css" />
+		<link rel="stylesheet" href="../css/tags.css" />
+		<link rel="stylesheet" href="../css/settings.css" />
+		<link rel="stylesheet" href="../css/search.css" />
+		<link rel="stylesheet" href="../css/video-player.css" />
+		<link rel="stylesheet" href="../css/sidebar.css" />
+		<link rel="stylesheet" href="../css/faq.css" />
+	</head>
+	<body id="body" style="display: none">
+		<!-- ============= Header ============= -->
+		<header class="header">
+			<a href="../index.html">
+				<h1 class="site-title">Web<span>Docs</span></h1>
+			</a>
+			<nav class="header-nav"></nav>
+
+			<!-- ============= Search ============= -->
+			<div class="search-container">
+				<button
+					id="searchToggle"
+					class="search-toggle"
+					aria-label="Open search"
+				>
+					<svg
+						width="20"
+						height="20"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<circle cx="11" cy="11" r="8"></circle>
+						<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+					</svg>
+				</button>
+
+				<div class="search-input-container">
+					<input
+						type="text"
+						id="searchInput"
+						class="search-input"
+						placeholder="Search..."
+						aria-label="Search"
+						autocomplete="off"
+					/>
+					<button
+						id="closeSearch"
+						class="close-search"
+						aria-label="Close search"
+					>
+						<svg
+							width="16"
+							height="16"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<line x1="18" y1="6" x2="6" y2="18"></line>
+							<line x1="6" y1="6" x2="18" y2="18"></line>
+						</svg>
+					</button>
+				</div>
+
+				<div id="searchResults" class="search-results"></div>
+			</div>
+
+			<!-- ============= Settings Button ============= -->
+			<button
+				id="settingsTrigger"
+				class="settings-toggle"
+				aria-label="Open settings"
+			>
+				<svg
+					width="20"
+					height="20"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+					<circle cx="12" cy="12" r="3"></circle>
+					<path
+						d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+					></path>
+				</svg>
+			</button>
+		</header>
+
+		<!-- ============= Banner ============= -->
+		<div class="banner">
+			<div class="banner-image">
+				<img src="../images/banners/banner4.jpg" alt="Banner" />
+			</div>
+		</div>
+
+		<!-- ============= Settings Panel ============= -->
+		<div id="settingsPanel" class="settings-panel">
+			<div class="settings-panel-content">
+				<div class="settings-header">
+					<h2>Special Features</h2>
+					<button
+						id="closeSettings"
+						class="close-settings"
+						aria-label="Close settings"
+					>
+						<svg
+							width="16"
+							height="16"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<line x1="18" y1="6" x2="6" y2="18"></line>
+							<line x1="6" y1="6" x2="18" y2="18"></line>
+						</svg>
+					</button>
+				</div>
+
+				<div class="setting-group">
+					<label>Font size:</label>
+					<select id="fontSize">
+						<option value="14px">Small</option>
+						<option value="16px" selected>Default</option>
+						<option value="18px">Big</option>
+						<option value="20px">Very big</option>
+					</select>
+				</div>
+
+				<div class="setting-group">
+					<label>Line spacing:</label>
+					<select id="lineHeight">
+						<option value="1.4">Narrow</option>
+						<option value="1.6" selected>Default</option>
+						z
+						<option value="1.8">Wide</option>
+						<option value="2.0">Very wide</option>
+					</select>
+				</div>
+
+				<div class="setting-group">
+					<label>Contrast:</label>
+					<select id="contrast">
+						<option value="standard" selected>Default</option>
+						<option value="high">Tall</option>
+						<option value="dark">Dark Mode (BETA)</option>
+					</select>
+				</div>
+
+				<div class="setting-group">
+					<label>
+						<input type="checkbox" id="disableAnimations" />
+						Disable animations
+					</label>
+				</div>
+
+				<div class="setting-group">
+					<label>
+						<input type="checkbox" id="focusMode" />
+						Focus mode (hide sidebars)
+					</label>
+				</div>
+
+				<div class="setting-buttons">
+					<button id="applySettings">Apply</button>
+					<button id="resetSettings">Reset</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- ============= Scroll to top button ============= -->
+		<button id="scrollToTop" class="scroll-top">↑</button>
+
+		<!-- ============= Main content ============= -->
+		<div class="container">
+			<!-- ============= Sidebar ============= -->
+			<aside class="sidebar">
+				<h3>Documentation</h3>
+
+				<div class="sidebar-section">
+					<div class="section-header active">
+						<span>🏝️ Section 1</span>
+						<span class="section-icon rotated">›</span>
+					</div>
+					<ul class="pages-list expanded">
+						<li><a href="../index.html">Page 1</a></li>
+						<li>
+							<a href="../pages/page-2.html">Page 2</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="sidebar-section">
+					<div class="section-header">
+						<span>📖 Section 2</span>
+						<span class="section-icon">›</span>
+					</div>
+					<ul class="pages-list">
+						<li>
+							<a href="../pages/page-3.html">Page 3</a>
+						</li>
+						<li>
+							<a href="../pages/page-4.html" class="active">Page 4</a>
+						</li>
+						<li><a href="#">Page 5</a></li>
+						<li><a href="#">Page 6</a></li>
+						<li><a href="#">Page 7</a></li>
+					</ul>
+				</div>
+
+				<div class="sidebar-section">
+					<div class="section-header">
+						<span>🌱 Section 3</span>
+						<span class="section-icon">›</span>
+					</div>
+					<ul class="pages-list">
+						<li><a href="#">Page 8</a></li>
+						<li><a href="#">Page 9</a></li>
+						<li><a href="#">Page 10</a></li>
+					</ul>
+				</div>
+
+				<div class="sidebar-section">
+					<div class="section-header">
+						<span>🧙‍♂️ Section 4</span>
+						<span class="section-icon">›</span>
+					</div>
+					<ul class="pages-list">
+						<li><a href="#">Page 11</a></li>
+						<li><a href="#">Page 12</a></li>
+						<li><a href="#">Page 13</a></li>
+					</ul>
+				</div>
+			</aside>
+
+			<!-- ============= Content ============= -->
+			<main class="content">
+				<!-- ============= Basic tags ============= -->
+				<div class="tags-group">
+					<span class="tag tag--primary">Tag 1</span>
+					<span class="tag tag--success">Tag 2</span>
+					<span class="tag tag--warning">Tag 3</span>
+					<span class="tag tag--danger">Tag 4</span>
+					<span class="tag tag--info">Tag 5</span>
+				</div>
+
+				<h1>🏞️ Main Headline</h1>
+				<p>Nulla scelerisque condimentum ligula, sit amet fringilla.</p>
+
+				<h2 id="section1">
+					<a class="latLink" href="#section1"># </a>Headline 1
+				</h2>
+				<p>
+					Integer in ultricies lorem, ac luctus enim. Mauris dictum felis nunc,
+					id sodales elit eleifend vitae. Mauris euismod consequat mauris, ac
+					consequat velit sagittis id. Cras faucibus sagittis bibendum. Vivamus
+					sed enim at urna eleifend volutpat. In hac habitasse platea dictumst.
+					Cras faucibus faucibus nibh, sit amet mattis leo auctor sed. Aenean
+					vestibulum eu risus at laoreet. Vestibulum quis orci vestibulum,
+					rhoncus nisi at, pulvinar nibh. Donec fermentum sem vel finibus
+					luctus. Nullam arcu nunc, rhoncus non maximus eu, rhoncus eget velit.
+					Duis elementum dolor placerat elit maximus dapibus. Pellentesque
+					cursus et odio vitae commodo. Vestibulum elementum ex eget diam cursus
+					tristique.
+				</p>
+				<h2 id="section2">
+					<a class="latLink" href="#section2"># </a>Headline 2
+				</h2>
+				<p>
+					Pellentesque cursus et odio vitae commodo. Vestibulum elementum ex
+					eget diam cursus tristique.
+				</p>
+
+				<h3 id="section2-1">
+					<a class="latLink" href="#section2-1"># </a>Headline 2-1
+				</h3>
+				<p>
+					viverra ligula lectus, quis elementum dolor vulputate vel. In hac
+					habitasse platea dictumst. Proin dapibus suscipit ante et tristique.
+					Praesent auctor ac quam ac condimentum.
+				</p>
+
+				<h2 id="section3">
+					<a class="latLink" href="#section3"># </a>Headline 3
+				</h2>
+				<pre><code>#Donec ipsum nisl, tempor nec pulvinar id</code></pre>
+				<p>
+					Suspendisse euismod urna quis arcu ultrices ullamcorper vel id dui.
+					Etiam scelerisque, mi sit amet condimentum mattis, nulla urna viverra
+					nisi, at gravida nulla dolor vitae erat. Cras pellentesque augue quis
+					ligula elementum placerat. Duis ut quam ligula. Donec ut ante eu purus
+					condimentum scelerisque. Maecenas interdum eu dolor eget mollis. Donec
+					mauris sem, porttitor quis massa iaculis, auctor dapibus massa. Aenean
+					consequat elit sodales est sodales, id consectetur enim vulputate.
+					Duis massa metus, suscipit sed nunc a, finibus mattis nisi. Etiam eu
+					mi egestas, commodo diam a, finibus augue. Maecenas fermentum
+					elementum nulla, non vehicula ipsum. Fusce imperdiet, sapien et
+					pharetra laoreet, justo quam pulvinar felis, eu dictum eros nisi in
+					lectus.
+				</p>
+
+				<h2 id="section4">
+					<a class="latLink" href="#section4"># </a>Headline 4
+				</h2>
+				<pre><code>Curabitur at massa orci. Fusce sit amet ex dui.</code></pre>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu
+					pulvinar purus, ut sodales mauris. Suspendisse convallis congue
+					blandit. Vivamus sollicitudin ultricies consequat. Cras posuere
+					eleifend eleifend. Proin sagittis metus non lacus porta, porta
+					suscipit arcu pharetra. Nullam ultrices fermentum justo, a aliquet
+					risus cursus a. Suspendisse volutpat dignissim erat quis hendrerit.
+					Phasellus tristique sodales placerat. Morbi scelerisque arcu in luctus
+					imperdiet. Aenean semper sapien vel laoreet porta. Sed vestibulum sed
+					orci ut ultricies. Praesent sed rutrum quam. Sed sed lobortis urna. Ut
+				</p>
+				<p>
+					sed dapibus lorem, placerat gravida leo. Donec at ex quis mauris
+					mollis fermentum. Sed lacinia ornare tellus, in mattis dolor
+					sollicitudin eget. Vestibulum consequat metus vitae egestas porttitor.
+					Curabitur interdum eleifend metus, ut sodales ipsum hendrerit sed.
+					Nulla nec dignissim lacus, ac luctus ex. Vestibulum vel libero at
+					neque dapibus elementum quis sit amet tortor. In magna massa, blandit
+					vitae rutrum laoreet, consequat ut est. Maecenas mattis augue
+					consectetur tortor mattis, ac interdum ante feugiat. Duis facilisis
+					pretium consequat. Orci varius natoque penatibus et magnis dis
+					parturient montes, nascetur ridiculus mus. In fermentum, nulla ac
+					bibendum feugiat, enim metus suscipit ante, non finibus odio quam eu
+					metus. Vestibulum a placerat augue, a convallis sem. Vivamus eu
+					volutpat tortor. Fusce maximus placerat dolor. Sed ex libero,
+					porttitor et aliquam eget, venenatis eu ligula. Donec posuere
+					imperdiet orci, ut dictum ligula laoreet quis. Nam bibendum lacus
+					eleifend, interdum lectus et, malesuada ex.
+				</p>
+
+				<div class="note-block tip">
+					<p>Elit facilisis malesuada!</p>
+				</div>
+
+				<h2 id="section5">
+					<a class="latLink" href="#section5"># </a>Headline 5
+				</h2>
+				<pre><code>Curabitur at massa orci. Fusce sit amet ex dui.</code></pre>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu
+					pulvinar purus, ut sodales mauris. Suspendisse convallis congue
+					blandit. Vivamus sollicitudin ultricies consequat. Cras posuere
+					eleifend eleifend. Proin sagittis metus non lacus porta, porta
+					suscipit arcu pharetra. Nullam ultrices fermentum justo, a aliquet
+					risus cursus a. Suspendisse volutpat dignissim erat quis hendrerit.
+					Phasellus tristique sodales placerat. Morbi scelerisque arcu in luctus
+					imperdiet. Aenean semper sapien vel laoreet porta. Sed vestibulum sed
+					orci ut ultricies. Praesent sed rutrum quam. Sed sed lobortis urna. Ut
+				</p>
+				<p>
+					sed dapibus lorem, placerat gravida leo. Donec at ex quis mauris
+					mollis fermentum. Sed lacinia ornare tellus, in mattis dolor
+					sollicitudin eget. Vestibulum consequat metus vitae egestas porttitor.
+					Curabitur interdum eleifend metus, ut sodales ipsum hendrerit sed.
+					Nulla nec dignissim lacus, ac luctus ex. Vestibulum vel libero at
+					neque dapibus elementum quis sit amet tortor. In magna massa, blandit
+					vitae rutrum laoreet, consequat ut est. Maecenas mattis augue
+					consectetur tortor mattis, ac interdum ante feugiat. Duis facilisis
+					pretium consequat. Orci varius natoque penatibus et magnis dis
+					parturient montes, nascetur ridiculus mus. In fermentum, nulla ac
+					bibendum feugiat, enim metus suscipit ante, non finibus odio quam eu
+					metus. Vestibulum a placerat augue, a convallis sem. Vivamus eu
+					volutpat tortor. Fusce maximus placerat dolor. Sed ex libero,
+					porttitor et aliquam eget, venenatis eu ligula. Donec posuere
+					imperdiet orci, ut dictum ligula laoreet quis. Nam bibendum lacus
+					eleifend, interdum lectus et, malesuada ex.
+				</p>
+
+				<!-- ============= Navigation buttons ============= -->
+				<div class="page-navigation">
+					<a
+						href="page-3.html"
+						class="nav-button nav-button-prev"
+						style="visibility: visible"
+					>
+						<span class="nav-arrow">←</span>
+						<span class="nav-text">Page 3</span>
+					</a>
+					<a
+						href="../pages/TEST.html"
+						class="nav-button nav-button-next"
+						style="visibility: hidden"
+					>
+						<span class="nav-text">Page...</span>
+						<span class="nav-arrow">→</span>
+					</a>
+				</div>
+			</main>
+
+			<!-- ============= Right navigation ============= -->
+			<aside class="right-nav">
+				<h3>Content</h3>
+				<ul>
+					<li><a href="#section1">Headline 1</a></li>
+					<li><a href="#section2">Headline 2</a></li>
+					<li>
+						<ul class="right-nav-submenu">
+							<li><a href="#section2-1">Headline 2-1</a></li>
+						</ul>
+					</li>
+					<li><a href="#section3">Headline 3</a></li>
+					<li><a href="#section4">Headline 4</a></li>
+					<li><a href="#section5">Headline 5</a></li>
+				</ul>
+			</aside>
+		</div>
+
+		<!-- ============= Footer ============= -->
+		<footer class="footer">
+			<div class="footer-content">
+				<p>&copy; Design and website developed by: Kisonix</p>
+				<div class="social-links">
+					<a href="https://github.com/Kisonix-Dev" target="_blank">GitHub</a>
+					<a href="https://t.me/Kisonix_tg" target="_blank">Telegram channel</a>
+					<a href="https://www.twitch.tv/kisonix" target="_blank"
+						>Twitch channel</a
+					>
+					<a href="https://live.vkvideo.ru/kisonix" target="_blank"
+						>VK Live channel</a
+					>
+				</div>
+			</div>
+		</footer>
+
+		<!-- ============= Modal ============= -->
+		<div id="imageModal" class="modal">
+			<span class="close">&times;</span>
+			<button class="nav-btn prev-btn" id="prevBtn">&#10094;</button>
+			<button class="nav-btn next-btn" id="nextBtn">&#10095;</button>
+			<img class="modal-content" id="modalImage" />
+		</div>
+		<script src="../js/script.js"></script>
+		<script src="../js/modal.js"></script>
+		<script src="../js/copy-code.js"></script>
+		<script src="../js/settings.js"></script>
+		<script src="../js/search.js"></script>
+		<script src="../js/video-player.js"></script>
+		<script src="../js/sidebar.js"></script>
+		<script src="../js/faq.js"></script>
+	</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>WebDocs</title>
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/main-style.css" />
+	</head>
+	<body id="body" style="display: none">
+		<!-- ============= Header ============= -->
+		<header class="header">
+			<a href="main.html">
+				<h1 class="site-title">Web<span>Docs</span></h1>
+			</a>
+
+			<div class="header-right">
+				<nav class="header-nav">
+					<a href="#" onclick="scrollToTop()">Main</a>
+					<a href="#about">About</a>
+					<a href="#developers">Developers</a>
+					<a href="#support">Support</a>
+				</nav>
+			</div>
+		</header>
+
+		<!-- ============= Scroll to top button ============= -->
+		<button id="scrollToTop" class="scroll-top">↑</button>
+
+		<!-- ============= Main content ============= -->
+		<div class="container">
+			<!-- ============= Content ============= -->
+			<main class="content">
+				<div class="main-content">
+          <h1 class="main-title"><span>Your project</span></h1>
+					<div class="title-image-container">
+          <img src="../images/logos/logo-your-project.png" alt="Logo" class="title-image">
+					</div>
+					<div class="text">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br />
+							etiam ultrices arcu vel nunc vehicula<br />
+							pulvinar
+						</p>
+					</div>
+					<div class="buttons-container">
+						<a href="https://github.com/Kisonix-Dev/WebDocs" target="_blank">
+							<button class="main-button github-button">GitHub</button>
+						</a>
+						<a href="./index.html">
+							<button class="main-button docs-button">Documentation</button>
+						</a>
+						<a href="./software.html">
+							<button class="main-button software-button">Software</button>
+						</a>
+					</div>
+					<div class="info-blocks">
+						<div class="info-block">
+							<svg
+								width="48"
+								height="48"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M14 2H6C4.9 2 4.01 2.9 4.01 4L4 20C4 21.1 4.89 22 5.99 22H18C19.1 22 20 21.1 20 20V8L14 2ZM16 18H8V16H16V18ZM16 14H8V12H16V14ZM13 9V3.5L18.5 9H13Z"
+									fill="currentColor"
+								/>
+							</svg>
+							<h3>Info block 1</h3>
+							<p>
+								Cras vitae ligula sed nunc pharetra eleifend ut sit amet nisi.
+							</p>
+						</div>
+						<div class="info-block">
+							<svg
+								width="48"
+								height="48"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+									stroke="currentColor"
+									stroke-width="2"
+								/>
+								<path
+									d="M12 6V12L16 14"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+								/>
+							</svg>
+							<h3>Info block 2</h3>
+							<p>
+								Sed fermentum semper eros, in congue nibh ornare id. 
+							</p>
+						</div>
+						<div class="info-block">
+							<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#ff9d47"><path d="M320-240 80-480l240-240 57 57-184 184 183 183-56 56Zm320 0-57-57 184-184-183-183 56-56 240 240-240 240Z"/></svg>
+							<h3>Info block 3</h3>
+							<p>Aliquam id accumsan urna. Aliquam at pellentesque ante.</p>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+    			
+			<!-- ============= About your project ============= -->
+			<section id="about" class="about-section">
+				<div class="about-container">
+					<div class="about-content">
+						<h2 class="about-title">About</h2>
+						<div class="about-text">
+							<p>Duis sed ultricies ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus id quam augue. Aenean eu nunc sit amet nisi rhoncus pellentesque ut sed nunc. Nam rhoncus suscipit nulla. Ut tempor pulvinar elit, at laoreet ligula.</p>
+							
+							<ul>
+								<li><strong>Option 1</strong> - Interdum et malesuada fames ac ante ipsum primis in faucibus.</li>
+								<li><strong>Option 2</strong> - Aenean commodo in nisl tempor porta.</li>
+								<li><strong>Option 3</strong> - Sed porttitor efficitur ante ac rutrum. Etiam dignissim sapien ipsum.</li>
+							</ul>
+							
+							<p>Vivamus non mauris commodo libero placerat aliquet eget sed lectus. Fusce accumsan efficitur aliquet. Vivamus id nisi erat. Proin a tellus non elit malesuada gravida vel pellentesque mi.</p>
+							
+							<p>Nullam porta felis eros, eget sollicitudin purus bibendum ac. Duis purus dolor, rhoncus id tincidunt ac, porttitor in lacus.</p>
+						</div>
+					</div>
+					<div class="about-image">
+						<img src="../images/logos/about.png" alt="About" width="350" height="250">
+					</div>
+				</div>
+			</section>
+			
+			<!-- ============= Project developers ============= -->
+			<section id="developers" class="developers-section">
+				<h2 class="developers-title">Project developers</h2>
+				<div class="developers-grid">
+					<!-- Dev 1 -->
+					<div class="developer-card">
+						<img src="../images/avatars/user-ava.png" alt="User avatars" class="developer-avatar">
+						<h3 class="developer-name">Name</h3>
+						<p class="developer-role">Lead Developer</p>
+						<a href="#" target="_blank">
+            <button class="support-button">Support</button>
+            </a>
+					</div>
+					
+					<!-- Dev 2 -->
+					<div class="developer-card">
+						<img src="../images/avatars/user-ava.png" alt="User avatars" class="developer-avatar">
+						<h3 class="developer-name">Name</h3>
+						<p class="developer-role">Frontend developer</p>
+						<a href="#" target="_blank">
+            <button class="support-button">Support</button>
+            </a>
+					</div>
+					
+					<!-- Dev 3 -->
+					<div class="developer-card">
+						<img src="../images/avatars/user-ava.png" alt="User avatars" class="developer-avatar">
+						<h3 class="developer-name">Name</h3>
+						<p class="developer-role">Designer</p>
+						<a href="#" target="_blank">
+            <button class="support-button">Support</button>
+            </a>
+					</div>
+				</div>
+			</section>
+			
+			<!-- ============= Support project ============= -->
+			<section id="support" class="project-support-section">
+				<div class="project-support-container">
+					<div class="project-support-content">
+						<h2 class="project-support-title">Support project</h2>
+						<div class="project-support-info">
+							<p>Duis lacinia augue a erat hendrerit, id ultricies tortor placerat. Aenean eu hendrerit nunc, sed dictum ex.</p>
+							<p>Mauris ac erat eu massa:</p>
+							<ul>
+								<li>Nulla enim orci, congue nec consectetur a</li>
+								<li>Vivamus dolor ligula, mollis</li>
+								<li>Nunc eu viverra turpis. Nam</li>
+								<li>Ut porttitor dui vel ex faucibus</li>
+							</ul>
+							<p>Maecenas porta risus et rutrum luctus!</p>
+						</div>
+            <a href="#" target="_blank">
+              <button class="project-support-button">Support project</button>
+            </a>
+					</div>
+					<div class="project-support-image">
+            <img src="../images/logos/support.png" alt="Support project" width="300" height="250">
+        </div>
+				</div>
+			</section>
+		</div>
+
+		<!-- ============= Footer ============= -->
+		<footer class="footer">
+			<div class="footer-content">
+				<p>&copy; Design and website developed by: Kisonix</p>
+				<div class="social-links">
+					<a href="https://github.com/Kisonix-Dev" target="_blank">GitHub</a>
+					<a href="https://t.me/Kisonix_tg" target="_blank">Telegram channel</a>
+					<a href="https://www.twitch.tv/kisonix" target="_blank">Twitch channel</a>
+					<a href="https://live.vkvideo.ru/kisonix" target="_blank">VK Live channel</a>
+				</div>
+			</div>
+		</footer>
+		<script src="js/script.js"></script>
+		<script src="js/sidebar.js"></script>
+	</body>
+</html>

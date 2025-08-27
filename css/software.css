@@ -1,0 +1,131 @@
+/* ============= Software ============= */
+.downloads-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem;
+}
+
+.page-title {
+	font-size: 2.8rem;
+	font-weight: 400;
+	color: #6b6b6b;
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+.page-description {
+	font-size: 1.2rem;
+	color: #6b6b6b;
+	text-align: center;
+	max-width: 800px;
+	margin: 0 auto 3rem;
+	line-height: 1.6;
+}
+
+.category-section {
+	margin-bottom: 4rem;
+	scroll-margin-top: 100px;
+}
+
+.category-title {
+	font-size: 2.2rem;
+	font-weight: 400;
+	color: #6b6b6b;
+	margin-bottom: 2rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid #e5e7eb;
+}
+
+.programs-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+	gap: 2rem;
+}
+
+.program-card {
+	background: #f6f6f7;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+	transition: all 0.3s ease;
+	border: 1px solid #e5e7eb;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.program-card:hover {
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.program-image {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	border-bottom: 1px solid #e5e7eb;
+}
+
+.program-content {
+	padding: 1.5rem;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.program-title {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: #6b6b6b;
+	margin: 0 0 1rem;
+}
+
+.program-description {
+	color: #6b6b6b;
+	line-height: 1.6;
+	margin-bottom: 1.5rem;
+	flex-grow: 1;
+}
+
+.download-button {
+	display: inline-block;
+	background-color: #ff9d47;
+	color: white;
+	padding: 0.8rem 1.5rem;
+	border-radius: 8px;
+	text-decoration: none;
+	font-weight: 600;
+	text-align: center;
+	transition: background-color 0.3s;
+	border: none;
+	cursor: pointer;
+}
+
+.download-button:hover {
+	background-color: #ffbd84;
+}
+
+@media (max-width: 768px) {
+	.programs-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.page-title {
+		font-size: 2.2rem;
+	}
+
+	.page-description {
+		font-size: 1.1rem;
+		padding: 0 1rem;
+	}
+
+	.category-nav {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.category-link {
+		width: 100%;
+		max-width: 250px;
+		text-align: center;
+	}
+}
